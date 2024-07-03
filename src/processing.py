@@ -1,4 +1,4 @@
-def filter_by_state(input_dict: list[dict], state: str | None = "EXECUTED") -> list[dict]:
+def filter_by_state(input_dict: list[dict], state: str = "EXECUTED") -> list[dict]:
     """Функция для сортировки списка словарей по ключу state"""
 
     new_dict = []
@@ -10,7 +10,7 @@ def filter_by_state(input_dict: list[dict], state: str | None = "EXECUTED") -> l
     return new_dict
 
 
-def sort_by_date(input_dict: list[dict], ascending: bool | None = True) -> list[dict]:
+def sort_by_date(input_dict: list[dict], ascending: bool = True) -> list[dict]:
     """Функция для сортировки списка словарей по дате"""
 
     for dictionary in input_dict:

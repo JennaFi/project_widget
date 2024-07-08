@@ -1,24 +1,24 @@
-def filter_by_state(input_dict: list[dict], state: str | None = "EXECUTED") -> list[dict]:
+def filter_by_state(input_list: list[dict], state: str = "EXECUTED") -> list[dict]:
     """Функция для сортировки списка словарей по ключу state"""
 
-    new_dict = []
+    new_list = []
 
-    for dictionary in input_dict:
-        for key, value in dictionary.items():
-            if dictionary[key] == state:
-                new_dict.append(dictionary)
-    return new_dict
+    for item in input_list:
+        for key, value in item.items():
+            if item[key] == state:
+                new_dict.append(item)
+    return new_list
 
 
-def sort_by_date(input_dict: list[dict], ascending: bool | None = True) -> list[dict]:
+def sort_by_date(input_list: list[dict], is_ascending: bool = True) -> list[dict]:
     """Функция для сортировки списка словарей по дате"""
 
-    for dictionary in input_dict:
-        if ascending:
-            sorted_dict = sorted(input_dict, key=lambda date: date.get("date", 0), reverse=True)
+    for item in input_list:
+        if is_ascending:
+            sorted_list = sorted(input_list, key=lambda date: date.get("date", 0), reverse=True)
         else:
-            sorted_dict = sorted(
-                input_dict,
+            sorted_list = sorted(
+                input_list,
                 key=lambda date: date.get("date", 0),
             )
-    return sorted_dict
+    return sorted_list

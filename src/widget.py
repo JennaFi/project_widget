@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_card_number, get_mask_account
 
 
 def mask_account_card(user_input: str) -> str:
@@ -14,7 +14,7 @@ def mask_account_card(user_input: str) -> str:
     else:
         symbols[-1] = get_mask_card_number(symbols[-1])
 
-    return "".join(symbols)
+    return " ".join(symbols)
 
 
 def get_data(user_data: str) -> str:

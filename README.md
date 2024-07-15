@@ -42,6 +42,11 @@ python manage.py runserver
 `get_data`, 
 `sort_by_date`.
 
+## Генераторы
+`card_number_generator`
+`transaction_descriptions`
+`filter_by_currency`
+
 ## Документация:
 
 Дополнительную информацию о структуре проекта и API можно найти в [документации](docs/README.md).

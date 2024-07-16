@@ -47,6 +47,9 @@ python manage.py runserver
 `transaction_descriptions`
 `filter_by_currency`
 
+## Декораторы
+`decorators.py`
+
 ## Документация:
 
 Дополнительную информацию о структуре проекта и API можно найти в [документации](docs/README.md).

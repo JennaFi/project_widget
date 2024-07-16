@@ -9,9 +9,7 @@ def test_log_correct():
     my_function(1, 2)
 
     with open("test_msg.txt", "r", encoding="utf-8") as file:
-        file.read()
-
-    assert "my_function ok"
+        assert file.read() == "my_function ok"
 
 
 def test_log_incorrect():
@@ -22,9 +20,7 @@ def test_log_incorrect():
     error_function()
 
     with open("test_msg.txt", "r", encoding="utf-8") as file:
-        file.read()
-
-    assert "error_function error: There's been an issue. Inputs: () and {}"
+        assert file.read() == "error_function error: There's been an issue. Inputs: () and {}"
 
 
 def test_log_console_correct(capsys):

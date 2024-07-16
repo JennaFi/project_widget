@@ -2,7 +2,7 @@ from functools import wraps
 from typing import Callable, Any
 
 
-def log(filename=None) -> Callable:
+def log(filename: Any = None) -> Callable:
     """Функция, реализующая запись информации в лог"""
 
     def decorator(function: Callable) -> Callable:
@@ -22,8 +22,5 @@ def log(filename=None) -> Callable:
                 print(log_msg)
 
         return wrapper
+
     return decorator
-
-
-
-

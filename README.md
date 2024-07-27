@@ -40,12 +40,21 @@ python manage.py runserver
 `mask_account_card`, 
 `filter_by_state`, 
 `get_data`, 
-`sort_by_date`.
+`sort_by_date`,
+`card_number_generator`,
+`filter_by_currency_generator`,
+`log`,
+`get_transactions_dictionary`,
+`convert_to_rub`,
 
 ## Генераторы
 `card_number_generator`
 `transaction_descriptions`
 `filter_by_currency`
+
+## Декораторы
+`log`
+
 
 ## Документация:
 

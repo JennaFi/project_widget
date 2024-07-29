@@ -1,3 +1,16 @@
+import logging
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s: %(filename)s: %(levelname)s: %(message)s",
+    filename="../logs/masks.log",
+    filemode="w",
+)
+
+logger = logging.getLogger("masks")
+
+
 def get_mask_card_number(user_input_card: str) -> str:
     """Функция  маскировки номера карты"""
 

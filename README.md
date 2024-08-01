@@ -55,6 +55,8 @@ python manage.py runserver
 ## Декораторы
 `log`
 
+## Логирование
+logging
 
 ## Документация:
 

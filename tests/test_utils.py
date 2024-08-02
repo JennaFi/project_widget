@@ -18,7 +18,6 @@ def transactions():
     return get_transactions_dictionary('../data/operations.json')
 
 
-
 def test_get_transactions_dictionary(get_path):
     assert get_transactions_dictionary(get_path)[0] == {
         "id": 441945886,

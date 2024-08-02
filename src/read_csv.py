@@ -32,8 +32,3 @@ def convert_csv_file_to_dict(filename: str) -> List[Dict]:
             return new_dict_transactions
     except Exception:
         return [{}]
-
-
-print(convert_csv_file_to_dict("../data/transactions.csv"))
-
-

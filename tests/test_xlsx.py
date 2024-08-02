@@ -1,6 +1,6 @@
 import pytest
 
-from src.read_excell import convert_xlsx_to_dict
+from src.read_excel import convert_xlsx_to_dict
 
 
 @pytest.fixture

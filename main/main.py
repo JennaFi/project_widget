@@ -9,7 +9,6 @@ from src.result_output import get_result
 from src.search_string import search_by_string
 from src.utils import get_transactions_dictionary
 
-
 print("Привет! Добро пожаловать в программу работы с банковскими транзакциями.")
 print("Выберите необходимый пункт меню:"
       "\n1. Получить информацию о транзакциях из JSON-файла"
@@ -31,10 +30,12 @@ while True:
         break
     else:
         print("Данная операция недоступна, вернитесь в главное меню")
+
         print("Выберите необходимый пункт меню:"
               "\n1. Получить информацию о транзакциях из JSON-файла"
               "\n2. Получить информацию о транзакциях из CSV-файла"
               "\n3. Получить информацию о транзакциях из XLSX-файла")
+        user_input = input().lower()
 
 
 def get_transactions_info(user_input: str) -> Any:
@@ -53,7 +54,6 @@ def get_transactions_info(user_input: str) -> Any:
 
 
 transactions = get_transactions_info(user_input)
-
 
 print(
     "Введите статус, по которому необходимо выполнить фильтрацию. "
@@ -76,7 +76,6 @@ while True:
     else:
         print(f"Статус операции {user_input_2} недоступен")
 
-
 transactions_filtred = filter_by_state(transactions, user_input_2)
 
 print("Отсортировать операции по дате? Да/Нет")
@@ -91,14 +90,12 @@ if user_input_3 == 'да':
     else:
         transactions_filtred = sort_by_date(transactions_filtred, False)
 
-
 print("Выводить только рублевые транзакции? Да/Нет")
 
 user_input_5 = input().lower()
 
 if user_input_5 == 'да':
     transactions_filtred = list(filter_by_currency(transactions_filtred, 'RUB'))
-
 
 print("Отфильтровать список транзакций по определенному слову в описании? Да/Нет")
 
@@ -111,10 +108,6 @@ if user_input_6 == "да":
 
     transactions_filtred = search_by_string(transactions_filtred, word)
 
-
 print("Распечатываю итоговый список транзакций...")
 
-
 print(get_result(transactions_filtred))
-
-

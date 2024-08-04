@@ -58,6 +58,10 @@ python manage.py runserver
 ## Логирование
 logging
 
+## Чтение из CSV и Excel файлов
+`read_csv`,
+`read_xlsx`
+
 ## Документация:
 
 Дополнительную информацию о структуре проекта и API можно найти в [документации](docs/README.md).

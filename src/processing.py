@@ -1,24 +1,24 @@
-def filter_by_state(input_list: list[dict], state: str = "EXECUTED") -> list[dict]:
+def filter_by_state(transactions_list: list[dict], state: str = 'EXECUTED') -> list[dict]:
     """Функция для сортировки списка словарей по ключу state"""
 
-    new_list = []
+    if not transactions_list:
+        return []
 
-    for item in input_list:
-        for key, value in item.items():
-            if item[key] == state:
-                new_list.append(item)
-    return new_list
+    else:
+        return [transaction for transaction in transactions_list if transaction.get('state') == state.upper()]
 
 
-def sort_by_date(input_list: list[dict], is_ascending: bool = True) -> list[dict]:
+def sort_by_date(transactions_list: list[dict], is_ascending: bool = True) -> list[dict]:
     """Функция для сортировки списка словарей по дате"""
 
-    for item in input_list:
+    for transaction in transactions_list:
         if is_ascending:
-            sorted_list = sorted(input_list, key=lambda date: date.get("date", 0), reverse=True)
+            sorted_list = sorted(transactions_list, key=lambda date: date.get("date", 0), reverse=True)
         else:
             sorted_list = sorted(
-                input_list,
+                transactions_list,
                 key=lambda date: date.get("date", 0),
             )
     return sorted_list
+
+

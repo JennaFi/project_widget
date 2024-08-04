@@ -1,14 +1,15 @@
 import logging
+import os
 
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s: %(filename)s: %(levelname)s: %(message)s",
-    filename="../logs/masks.log",
-    filemode="w",
-)
+log_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs", "masks.log")
 
 logger = logging.getLogger("masks")
+logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler(log_file_path, mode="w")
+file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s: %(message)s")
+
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
 
 
 def get_mask_card_number(user_input_card: str) -> str:
@@ -29,7 +30,3 @@ def get_mask_account(user_input_account: str) -> str:
         return f"**{user_input_account[-4:]}"
     else:
         return 'Incorrect data'
-
-
-print(get_mask_card_number('sss'))
-

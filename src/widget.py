@@ -20,6 +20,6 @@ def mask_account_card(user_input: str) -> str:
 def get_data(user_data: str) -> str:
     """Функция преобразования даты"""
 
-    new_data = datetime.strptime(user_data, "%Y-%m-%dT%H:%M:%S.%f")
+    new_data = datetime.fromisoformat(user_data).strftime("%d.%m.%Y")
 
-    return new_data.strftime("%d.%m.%Y")
+    return new_data

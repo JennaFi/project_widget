@@ -10,7 +10,7 @@ def filter_by_currency(transactions: list[dict], currency: str):
         print("There is no transactions in that currency")
     else:
         for key in transactions:
-            if key["operationAmount"]["currency"]["name"] == currency:
+            if key.get("operationAmount").get("currency", {}).get("code") == currency.upper():
                 yield key
 
 
